@@ -33,6 +33,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Bootstrap Style Gem
+gem 'bootstrap-sass'
+# Font Awesome Icons
+gem 'font-awesome-rails'
+
+gem "jquery-rails"
+# Material layout uses the popper gem
+gem 'popper_js', '~> 1.12.9'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

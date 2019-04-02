@@ -7,23 +7,40 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" %>
   </head>
 
-  <body>
-    <%= render 'layouts/menu' %>
+<body class="">
+  <div class="wrapper">
+        
+    <div class="main-panel">
+      <%= render 'layouts/menu' %>
 
-    <% if notice %>
-      <div class="notice"><%= notice %></div>
-    <% end %>
+      <div class="content">
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>    
 
-    <% if alert %>
-      <div class="alert"><%= alert %></div>
-    <% end %>
-
-    <div>
-      <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
+  </div>
+</body>
 
-    <%= render 'layouts/footer' %>
-  </body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //init wizard
+
+        // demo.initMaterialWizard();
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+        demo.initCharts();
+
+    });
+</script>
+
 </html>
