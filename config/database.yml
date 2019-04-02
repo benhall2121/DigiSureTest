@@ -1,0 +1,30 @@
+# Development
+development:
+  adapter: postgresql
+  database: digisuretest_development
+  username: application
+  password: root
+  host: localhost
+  port: 5432
+
+# Production
+production:
+  adapter: postgresql
+  database: digisuretest
+  username: application
+  password: 212134
+  host: localhost
+  port: 5432
+
+# Staging
+staging:
+  adapter: postgresql
+  database: digisuretest_staging
+  username: digisuretest_staging
+  password: 212134
+  host: localhost
+  port: 5432
+
+
+
+
