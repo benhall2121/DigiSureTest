@@ -13,7 +13,7 @@
           <div class="row" style="margin-bottom:15px;">
             <div class="col-sm-6">
               <%= f.label :amount %>
-              <%= f.text_field :amount, autocomplete: "Amount", :class => "form-control" %>
+              <%= f.number_field :amount, autocomplete: "Amount", value: number_to_currency(f.object.amount.to_f, delimiter: '', unit: ''), step: :any, :class => "form-control" %>
             </div>
             <div class="col-sm-6">
               <%= f.label :transaction_type %><br/>

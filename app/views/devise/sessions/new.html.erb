@@ -5,6 +5,8 @@
       </div>
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          
           <div class="row" style="margin-bottom:15px;">
             <div class="col-sm-12">
               <%= f.label :email %>
