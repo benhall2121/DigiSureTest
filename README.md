@@ -21,6 +21,7 @@ Using
 * Used the [Material Dashboard from creative-time.com](https://www.creative-tim.com/product/material-dashboard) for the layout
 * Postgres Database
 * [Heroku server](http://digisuretest.herokuapp.com)
+* The [Devise Gem](https://github.com/plataformatec/devise) was used to setup the user creation and authentication
 
 ## Create a user
 
