@@ -16,3 +16,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+
+  $(".transaction_type").change(function(){
+  	if(this.value == "Transfer"){
+  	  $('.transfer_to_wrapper').show();
+  	} else {
+  	  $('.transfer_to_wrapper').hide();
+  	}
+  });
+})

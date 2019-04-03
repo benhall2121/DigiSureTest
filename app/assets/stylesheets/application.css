@@ -14,3 +14,9 @@
  *= require_tree .
  *= require_self
  */
+
+
+.dropdown{
+  padding:5px;
+  width: 100%;
+}

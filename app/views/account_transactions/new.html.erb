@@ -1,0 +1,43 @@
+<div class="offset-2 col-lg-8">
+  <div class="card">
+      <div class="card-header card-header-warning">
+          <h2 class="card-title">Transaction</h2>
+          <p class="card-category"><b>Account Number: <%= @bank_account.account_number %></b></p>
+      </div>
+      
+      <div class="card-body">
+        <%= form_for @account_transaction, :as => :account_transaction do |f| %>
+          <%= f.hidden_field :bank_account_id, value: @bank_account.id %>
+          <%= render "shared/error_messages", resource: @account_transaction %>
+
+          <div class="row" style="margin-bottom:15px;">
+            <div class="col-sm-6">
+              <%= f.label :amount %>
+              <%= f.text_field :amount, autocomplete: "Amount", :class => "form-control" %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.label :transaction_type %><br/>
+              <%= f.collection_select :transaction_type, AccountTransaction::TRANSACTION_TYPES, :to_s, :to_s, {:include_blank => false}, { :class=>'dropdown transaction_type' } %>
+            </div>
+          </div>
+
+          <div class="row transfer_to_wrapper" style="display:none; margin-bottom:15px;">
+            <div class="col-sm-12">
+              <%= f.label :transfer_to_id %>
+              <%= f.collection_select :transfer_to_id, BankAccount.where.not(id: @bank_account.id), :id, :user_and_account, {:include_blank => false}, { :class=>'dropdown' } %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.submit "Save", :class => "btn btn-success" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+  </div>
+</div>
+
+
+

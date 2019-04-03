@@ -8,7 +8,7 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+          <%= link_to 'Profile', user_path(current_user), :class => 'navbar-link' %>
         </li>
         &nbsp;|&nbsp;
         <li class="nav-item">

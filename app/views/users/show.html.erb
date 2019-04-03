@@ -1,0 +1,64 @@
+<div class="row">
+
+  <div class="col-md-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-success card-header-icon">
+        <div class="card-icon">
+          <i class="fa fa-user"></i>
+        </div>
+        <div class="pull-right" style="color:black;">
+          <%= link_to 'New Bank Account'.html_safe, new_bank_account_path(:user => @user), :class => "btn btn-sm btn-info" %>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-category">Total Balance</p>
+        <h3 class="card-title"><%= number_to_currency(@user.total_balance) %></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <b>Full Name:</b> &nbsp; <%= @user.full_name %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+  	<% @user.bank_accounts.each do |bank_account| %>
+    <div class="card" style="margin-bottom:50px;">
+      <div class="card-header card-header-primary">
+      	<div class="pull-left">
+          <h3 class="card-title">Bank Account Number: <%= bank_account.account_number %></h3>
+        </div>
+        <div class="pull-right">
+          <%= link_to '<i class="fa fa-plus-circle"></i> New Transaction'.html_safe, new_account_transaction_path(:bank_account => bank_account), :class => "btn btn-sm btn-info" %>
+        </div>
+      </div>
+
+      <div class="card-body table-responsive">
+        <table class="table table-hover">
+          <thead class="text-primary">
+            <th>Date Of Transaction</th>
+            <th>Transaction Type</th>
+            <th>Amount</th>
+          </thead>
+          <tbody>
+            <% bank_account.all_transactions.each do |t| %>
+              <tr>
+                <td><%= t.created_at.strftime("%b %d, %Y - %H:%M%P") %></td>
+                <td><%= t.transaction_type.downcase != 'transfer' ? t.transaction_type : (t.transfer_to_id == @user.id ? "Transferred from #{t.bank_account.user.full_name}" : "Transferred to #{t.transfer_to_bank_account.user.full_name}") %></td>
+                <td><%= number_to_currency(t.amount) %></td>
+              </tr>
+            <% end %>
+            <tr class="text-primary">
+              <td></td>
+              <td style="text-align:right; font-weight:bold;">Balance:</td>
+              <td><%= number_to_currency(bank_account.balance) %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
