@@ -5,8 +5,8 @@ class BankAccount < ApplicationRecord
   validates :account_number, presence: true, uniqueness: true
   validates :balance, presence: true, numericality: true
 
-  has_many :account_transactions, class_name: "AccountTransaction", foreign_key: "bank_account_id"
-  has_many :transfer_to_transactions, class_name: "AccountTransaction", foreign_key: "transfer_to_id"
+  has_many :account_transactions, class_name: "AccountTransaction", foreign_key: "bank_account_id", dependent: :destroy
+  has_many :transfer_to_transactions, class_name: "AccountTransaction", foreign_key: "transfer_to_id", dependent: :destroy
 
   def all_transactions
     AccountTransaction.where("bank_account_id = ? OR transfer_to_id = ?", self.id, self.id)
