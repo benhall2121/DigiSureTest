@@ -9,10 +9,10 @@
 
           <% if user_signed_in? %>
             <div class="col-sm-3" style="text-align:center;">
-                <%= link_to 'Your Bank Accounts'.html_safe, user_path(current_user), :class => "btn btn-sm btn-success" %>
+                <%= link_to 'Your Accounts'.html_safe, user_path(current_user), :class => "btn btn-sm btn-success" %>
             </div>
             <div class="col-sm-3" style="text-align:center;">
-                <%= link_to 'All Bank Accounts'.html_safe, bank_accounts_path, :class => "btn btn-sm btn-success" %>
+                <%= link_to 'All Accounts'.html_safe, bank_accounts_path, :class => "btn btn-sm btn-success" %>
             </div>
             <div class="col-sm-3" style="text-align:center;">
                 <%= link_to 'All Transactions'.html_safe, account_transactions_path, :class => "btn btn-sm btn-success" %>
