@@ -1,24 +1,27 @@
-# README
+# This is a coding challenge for DigiSure.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A demo website of this code can be found [HERE - http://digisuretest.herokuapp.com](http://digisuretest.herokuapp.com)
 
-Things you may want to cover:
+## Directions
 
-* Ruby version
+The directions for the challenge are: 
 
-* System dependencies
+Build a simple Ruby on Rails app where you can:
 
-* Configuration
+* create an account
+* send/receive dummy currency from your account to other accounts
+* see your balance/transactions
 
-* Database creation
+## Setup
 
-* Database initialization
+Using 
 
-* How to run the test suite
+* Ruby 2.5.1
+* Rails 5.2.3
+* Used the [Material Dashboard from creative-time.com](https://www.creative-tim.com/product/material-dashboard) for the layout
+* Postgres Database
+* [Heroku server](http://digisuretest.herokuapp.com)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
