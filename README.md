@@ -22,6 +22,29 @@ Using
 * Postgres Database
 * [Heroku server](http://digisuretest.herokuapp.com)
 
+## Create a user
+
+To create a user, go to the [website homepage](http://digisuretest.herokuapp.com) and click the Sign Up button. Fill in the form.
+
+## Create a Bank Account
+
+Log into the website, go to the homepage, click the "Your Accounts" button, click the "New Bank Account" button, and then Fill in the form.
+
+## Create a Transaction - Send Recieve Currency
+
+After you've created a bank account, you can then perform transactions.
+
+Log into the website, go to the homepage, click the "Your Accounts" button, click the "New Transaction" button on the bank account you want a transaction on, and then Fill in the form.
+
+The transaction options are: Withdrawal, Deposit, or Transfer
+
+When transferring money, you can select either one of your own accounts or another users account.
+
+## Viewing you balance
+
+Log into the website, go to the homepage, click the "Your Accounts" button. You will see your overall balance in the top left and a balance at the bottom of each bank account table.
+
+
 
 
 
